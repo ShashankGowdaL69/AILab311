@@ -1,0 +1,80 @@
+ShashankGowdaL 1BM23CS311
+ | | 
+-----
+ | | 
+-----
+ | | 
+-----
+Player X, enter row (0-2): 0
+Player X, enter column (0-2): 1
+ |X| 
+-----
+ | | 
+-----
+ | | 
+-----
+Player O, enter row (0-2): 1
+Player O, enter column (0-2): 1
+ |X| 
+-----
+ |O| 
+-----
+ | | 
+-----
+Player X, enter row (0-2): 1
+Player X, enter column (0-2): 0
+ |X| 
+-----
+X|O| 
+-----
+ | | 
+-----
+Player O, enter row (0-2): 0
+Player O, enter column (0-2): 0
+O|X| 
+-----
+X|O| 
+-----
+ | | 
+-----
+Player X, enter row (0-2): 2
+Player X, enter column (0-2): 2
+O|X| 
+-----
+X|O| 
+-----
+ | |X
+-----
+Player O, enter row (0-2): 0
+Player O, enter column (0-2): 2
+O|X|O
+-----
+X|O| 
+-----
+ | |X
+-----
+Player X, enter row (0-2): 2
+Player X, enter column (0-2): 0
+O|X|O
+-----
+X|O| 
+-----
+X| |X
+-----
+Player O, enter row (0-2): 2
+Player O, enter column (0-2): 1
+O|X|O
+-----
+X|O| 
+-----
+X|O|X
+-----
+Player X, enter row (0-2): 1
+Player X, enter column (0-2): 2
+O|X|O
+-----
+X|O|X
+-----
+X|O|X
+-----
+It's a draw!

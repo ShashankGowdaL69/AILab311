@@ -13,6 +13,8 @@ def calculate_conflicts(board):
 
 def hill_climbing():
     board = create_board()
+    print(f"Initial board: {board} with conflicts: {calculate_conflicts(board)}")
+    
     while True:
         current_conflicts = calculate_conflicts(board)
         if current_conflicts == 0:
@@ -25,6 +27,7 @@ def hill_climbing():
                 if temp_board[i] != j:
                     temp_board[i] = j
                     temp_conflicts = calculate_conflicts(temp_board)
+                    print(f"Board: {temp_board} with conflicts: {temp_conflicts}")
                     if temp_conflicts < next_conflicts:
                         next_conflicts = temp_conflicts
                         next_board = temp_board[:]
@@ -33,4 +36,4 @@ def hill_climbing():
         board = next_board
 
 solution = hill_climbing()
-print("Solution:", solution)
+print(f"Final solution: {solution}")

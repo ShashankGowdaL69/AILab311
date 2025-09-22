@@ -1,21 +1,33 @@
 import itertools
 
 def evaluate_expression(expression, assignment):
-    expression = expression.replace('P', str(assignment[0]))
-    expression = expression.replace('Q', str(assignment[1]))
-    expression = expression.replace('R', str(assignment[2]))
-    expression = expression.replace('and', 'and').replace('or', 'or').replace('not', 'not').replace('implies', '<=')
+    expression = expression.replace('A', str(assignment[0]))
+    expression = expression.replace('B', str(assignment[1]))
+    expression = expression.replace('C', str(assignment[2]))
+    expression = expression.replace('and', 'and').replace('or', 'or').replace('not', 'not')
     return eval(expression)
 
-def generate_truth_table(expression):
-    variables = ['P', 'Q', 'R']
+def check_entailment(alpha, kb):
+    variables = ['A', 'B', 'C']
     all_assignments = list(itertools.product([False, True], repeat=len(variables)))
 
-    print(f"Truth Table for: {expression}")
-    print("P\tQ\tR\tResult")
+    print("Truth Table:")
+    print("A\tB\tC\tKB\tα")
     for assignment in all_assignments:
-        result = evaluate_expression(expression, assignment)
-        print(f"{assignment[0]}\t{assignment[1]}\t{assignment[2]}\t{result}")
+        kb_result = evaluate_expression(kb, assignment)
+        alpha_result = evaluate_expression(alpha, assignment)
+        
+        print(f"{assignment[0]}\t{assignment[1]}\t{assignment[2]}\t{kb_result}\t{alpha_result}")
 
-expression = "(P and (Q or not R)) or (not P implies Q)"
-generate_truth_table(expression)
+        if kb_result and not alpha_result:
+            return False 
+    
+    return True 
+
+alpha = "A or B"
+kb = "(A or C) and (B and not C)"
+
+if check_entailment(alpha, kb):
+    print("KB entails α")
+else:
+    print("KB does not entail α")
